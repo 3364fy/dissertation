@@ -1,0 +1,3441 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .report {
+            background: #F8F8F8;
+        }
+
+        .report-content {
+            min-width: 320px;
+            max-width: 1000px; /* width: 70%; */
+            height: 100%;
+            margin: 20px auto 0 auto;
+            background-color: #fff;
+            position: relative;
+            color: #331133;
+            font-size: 14px;
+            line-height: 24.5px;
+        }
+
+        .report-content-No {
+            text-align: right;
+            padding-right: 20px;
+            line-height: 45px;
+        }
+
+        .txt_top {
+            padding: 20px 80px 0 80px;
+        }
+
+        .blokone-title {
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .blokone-txt-jian {
+            margin-top: 38px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .blokone-txt-info {
+            line-height: 30px;
+        }
+
+        .linexian {
+            width: 1px;
+            height: 60px;
+            background-color: #F8F8F8;
+            margin: 0 10px 30px 0;
+        }
+
+        .hen-line {
+            height: 2px;
+            background-color: #28A781;
+            margin: 0 auto 20px;
+        }
+
+        .blocktwo {
+            display: flex;
+        }
+
+        .blocktwo_left {
+            flex-grow: 0.33;
+        }
+
+        .blocktwo_right {
+            flex-grow: 0.67;
+        }
+
+        .blocktwo_left_title {
+            font-size: 16px;
+            color: #28A781;
+            width: 80px;
+            text-align: center;
+            background: url(../images/Rectangle-bg.png) repeat-x bottom;
+            margin: 0 auto;
+        }
+
+        .blocktwo_left_title1 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #28A781;
+            width: 182px;
+            text-align: center;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAANCAYAAABo1wTyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA1SURBVHgBNYvBEQAgDMKATujMTuHbOdqK5/lLOIK511CBlKJbQECVRVPCm9rKq8C7ZJr4iwOTGRLsoYuh2AAAAABJRU5ErkJggg==) repeat-x bottom;
+            margin: 0 auto;
+        }
+
+        .blocktop_txt {
+            border-bottom: 1px solid #F6F6F6;
+            padding-bottom: 12px;
+        }
+
+        .blocktwo_txttop_xn {
+            display: flex;
+            font-size: 16px;
+            color: #381738;
+            line-height: 25px;
+        }
+
+        .fenge-line {
+            width: 1px;
+            height: 15px;
+            margin: 6px 60px;
+            background-color: #F6F6F6;
+        }
+
+        .blocktwo_txttop_ms {
+            color: #AAAAAA;
+            line-height: 30px;
+        }
+
+        .qingdiao-color {
+            color: #FF2020;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .blocktwo_right_bottom {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px auto;
+        }
+
+        .fenge-line2 {
+            width: 1px;
+            height: 15px;
+            margin: 6px 0;
+            background-color: #F6F6F6;
+        }
+
+        .error_txt {
+            color: #F52530;
+        }
+
+        .there_model_right {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .line3 {
+            width: 1px;
+            height: 66px;
+            margin: 6px 0;
+            background-color: #F6F6F6;
+        }
+
+        .structure {
+            background: #FAFAFA;
+            background: linear-gradient(90deg, #FAFAFA 0%, #FFFFFF 100%);
+            border: 1px solid #EDEDED;
+            width: 848px;
+            margin: 30px auto;
+            padding: 46px 0 60px 0;
+            position: relative;
+        }
+
+        .cls_jiegou {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .jiegou-block {
+            border-radius: 5px 5px 0px 0px;
+            background: #FFFFFF;
+            border: 1px solid #DEE0E3;
+            width: 290px;
+        }
+
+        .duibi-fnge {
+            border-radius: 44px;
+            background: #F5F5F5;
+            color: #747579;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            width: 30px;
+            height: 56px;
+            padding: 6px 8px;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .duibi-fxe {
+            display: flex;
+            align-items: center;
+        }
+
+        .duibi-rightline {
+            position: relative;
+        }
+
+        .duibi-rightline::after {
+            background: #F5F5F5;
+            content: "";
+            width: 1px;
+            height: 15px;
+            position: absolute;
+            top: 50%;
+            margin-top: -7px;
+            right: -10px;
+        }
+
+        .duibi-fnge::after {
+            content: "";
+            background: #F5F5F5;
+            width: 2px;
+            height: 29px;
+            position: absolute;
+            top: 50%;
+            right: -12px;
+            margin-top: -15px;
+        }
+
+        .duibi-fnge::before {
+            content: "";
+            background: #F5F5F5;
+            width: 2px;
+            height: 29px;
+            position: absolute;
+            top: 50%;
+            left: -12px;
+            margin-top: -15px;
+        }
+
+        .duibi-leftline {
+            position: relative;
+        }
+
+        .duibi-leftline::before {
+            background: #F5F5F5;
+            content: "";
+            width: 1px;
+            height: 15px;
+            position: absolute;
+            top: 50%;
+            margin-top: -7px;
+            left: -10px;
+        }
+
+        .blocktwo_title {
+            border-radius: 5px 5px 0px 0px;
+            color: #fff;
+            line-height: 46px;
+            height: 46px;
+            padding-left: 20px;
+        }
+
+        .title_left_bg {
+            background: #27A17D;
+        }
+
+        .title_right_bg {
+            background: #3A66BD;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 20px;
+        }
+
+        .biaozun_txt_li {
+            display: flex;
+            justify-content: space-between;
+            line-height: 32px;
+        }
+
+        .txt_fontwght {
+            font-weight: 600;
+        }
+
+        .biaoqina > img {
+            transform: scale(0.5);
+        }
+
+        .biaoqina {
+            display: flex;
+            align-items: center;
+        }
+
+        .border_weil {
+            width: 1px;
+            height: 46px;
+            background: #28A781;
+            position: absolute;
+        }
+
+        .border_left_weil {
+            top: -12px;
+            left: -1px;
+        }
+
+        .border_left_weil::before {
+            content: "";
+            width: 46px;
+            height: 1px;
+            background: #28A781;
+            position: absolute;
+            top: 12px;
+            left: -12px;
+        }
+
+        .border_right_weil {
+            top: -12px;
+            right: -1px;
+        }
+
+        .border_right_weil::before {
+            content: "";
+            width: 46px;
+            height: 1px;
+            background: #28A781;
+            position: absolute;
+            top: 12px;
+            right: -12px;
+        }
+
+        .border_bottomleft_weil::before {
+            content: "";
+            width: 46px;
+            height: 1px;
+            background: #28A781;
+            position: absolute;
+            bottom: 12px;
+            left: -12px;
+        }
+
+        .border_bottomleft_weil {
+            bottom: -12px;
+            left: -1px;
+        }
+
+        .border_bottomright_weil {
+            bottom: -12px;
+            right: -1px;
+        }
+
+        .border_bottomright_weil::before {
+            content: "";
+            width: 46px;
+            height: 1px;
+            background: #28A781;
+            position: absolute;
+            bottom: 12px;
+            right: -12px;
+        }
+
+        /* 表格 */
+        table {
+            width: 100%;
+        }
+
+        .thead {
+            background-color: #F6F7F8;
+            height: 42px;
+            line-height: 42px;
+        }
+
+        .tbody > tr td:first-child {
+            color: #333333;
+            font-weight: 600;
+            font-size: 13px;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .border_distance {
+            border-collapse: collapse;
+            border-right: none;
+            border-left: none;
+        }
+
+        .thead tr th {
+            border-left: 1px solid #EFF0F0;
+            font-weight: 500;
+        }
+
+        .thead tr th:first-child {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .border_distance tr td {
+            border-left: 1px solid #EFF0F0;
+            border-top: 1px solid #EFF0F0;
+        }
+
+        .thead tr th:first-child, .border_distance tr td:first-child {
+            border-left: none;
+        }
+
+        .border_distance tr:first-child td {
+            border-top: none;
+        }
+
+        .tbody tr {
+            height: 46px;
+            color: #202020;
+        }
+
+        .table_title {
+            color: #28A781;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 50px;
+        }
+
+        .table_block {
+            margin: 20px 0;
+        }
+
+        .red_txt {
+            color: #F63740;
+        }
+
+        .green_txt {
+            color: #3F871B;
+        }
+
+        .yemianfx th, .yemianfx td {
+            padding-left: 20px;
+        }
+
+        .yemianfx .tbody > tr td:first-child {
+            border-left: 1px solid #EFF0F0;
+            font-weight: 500;
+        }
+
+        .question_title {
+            color: #333333;
+            font-weight: 600 !important;
+            font-size: 14px;
+        }
+
+        .question_pianduan {
+            margin-top: 72px;
+        }
+
+        .read_explain {
+            height: 366px;
+            background: #FFFDF1;
+            border: 1px solid #EFDA96;
+            border-left: 0;
+            border-right: 0;
+            margin: 0 -80px;
+            margin-top: 60px;
+            padding: 40px 80px;
+        }
+
+        /* 阅读说明 */
+        .gt_icon {
+            background: #FAAD14;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            line-height: 14px;
+            color: #fff;
+            font-size: 0.55rem;
+            text-align: center;
+        }
+
+        .sm_title {
+            display: flex;
+        }
+
+        .sm_txt {
+            color: #334154;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 14px;
+            margin-left: 10px !important;
+        }
+
+        .sm_title p {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .sm_sm_txt {
+            color: #504C3B;
+            font-size: 13px;
+            line-height: 25px;
+            padding-left: 23px;
+            margin-top: 15px;
+        }
+
+        .sm_sm_txt div {
+            position: relative;
+        }
+
+        .sm_sm_txt div::before {
+            content: ".";
+            position: absolute;
+            color: #FAAD14;
+            font-size: 30px;
+            line-height: 0;
+            left: -20px;
+            top: 3px;
+        }
+
+        .sm_sm_txt > div {
+            margin-bottom: 8px;
+        }
+
+        /* hearder */
+        .header {
+            height: 69px;
+            overflow: hidden;
+            line-height: 69px;
+            border: 1px solid #E7EFEC;
+            background-color: #FFFFFF;
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            top: 0;
+        }
+
+        .content {
+            height: calc(100% - 69px);
+            overflow: hidden;
+        }
+
+        .left {
+            width: 300px;
+            height: 100%;
+            float: left;
+            border: 1px solid #E7EFEC;
+            box-sizing: border-box;
+        }
+
+        .center {
+            float: left;
+            height: 100%;
+            width: calc(100% - 702px);
+            background: #F8F8F8;
+            box-sizing: border-box;
+            overflow-y: scroll;
+        }
+
+        .right {
+            float: right;
+            height: 100%;
+            width: 400px;
+            box-sizing: border-box;
+            padding: 40px;
+        }
+
+        .logo {
+            width: 300px;
+            padding-top: 5px;
+            float: left;
+            text-align: left;
+            box-sizing: border-box;
+            padding-left: 29px;
+        }
+
+        .logo > img {
+            width: 148px;
+            height: auto;
+        }
+
+        .loadcli {
+            width: calc(100% - 600px);
+            float: left;
+            padding: 0 40px;
+            overflow: hidden;
+        }
+
+        .header-text-le {
+            color: #313131;
+            font-size: 13px;
+            float: left;
+        }
+
+        .header-text-rig {
+            float: right;
+            cursor: pointer;
+            padding-right: 20px;
+        }
+
+        .header-text-rig:hover {
+            opacity: 0.6;
+            transition: 0.3s all;
+        }
+
+        .header-text-rig > img {
+            width: 16px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .header-text-rig > span {
+            color: #313131;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+
+        .skip {
+            float: left;
+            text-align: center;
+            width: 100%;
+        }
+
+        .skip-navi {
+            color: #373737;
+            font-size: 16px;
+            padding:7px 14px;
+            border-radius: 53px;
+        }
+
+        .skip-navi:hover{
+            background:#F0FFF8;
+            transition:all 1s;
+        }
+
+        .skip-this {
+            color: #fff !important;
+            background:#15BE6D;
+            position: relative;
+            padding:7px 14px;
+            border-radius: 53px;
+        }
+
+        .skip-this:hover{
+            color: #fff !important;
+            background:#15BE6D;
+            opacity:0.8;
+            transition:opacity 1s;
+        }
+
+        .menu-navi {
+            width: 260px;
+            box-sizing: border-box;
+        }
+
+        .more {
+            display: -webkit-box !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            work-break: break-all;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        / / 指定行数
+        }
+
+        .summarizing {
+            height: 46px;
+            line-height: 46px;
+            font-size: 14px;
+        }
+
+        .qianyan {
+            font-size: 16px;
+            font-weight: 600;
+            color: #28A781;
+            margin-right: 16px;
+        }
+
+        .xie_line {
+            color: #EFF0F0;
+            margin: 0 8px;
+        }
+
+        td {
+            height: 50px;
+        }
+
+        .tbody {
+            border: 1px solid #EFF0F0;
+        }
+
+        .tbody > tr > td:last-child {
+            padding: 12px;
+        }
+        .td_fixed_width{
+          padding: 20px;
+          width: 300px;
+          /* display: inline-block; */
+          height: auto;
+        }
+
+        .downloadCon{
+            float:right;
+            padding-right:29px;
+            margin-top: -1px;
+            cursor:pointer;
+        }
+        .downloadBtn{
+            font-size:14px;
+            padding:7px 16px;
+            border-radius: 54px;
+            background: #F0FFF8;
+            border: 1px solid #13BD6C;
+            line-height:14px;
+            color:#13BD6C;
+        }
+        .downloadBtn:hover{
+            opacity:0.8;
+            transition:opacity 1s;
+        }
+        .downloadBtn span{
+            vertical-align:middle;
+        }
+        .db_icon{
+            display:inline-block;
+            width:14px;
+            height:14px;
+            background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAq0lEQVR4Ae3UhRHCQBCFYUo4aeBKoAQ6oAVGcSmBqnDpADq4qwR3h50fT97MG89+SU4S0Ywa1pTpluqkyxkCMOdsvzQDnapmzn0MjLP+pYNiAPWfX8OogOvhqltKHdb2CxkMDirp07mqU0iub5VBaQyBuzX9olfD9VdzVIItcoiOXo0BFGAABRhACXaMLh6EmPxOXaMAAyjAAAowgAIMoRwToIsGjgnQa1icOTHB7vGwYcPKAAAAAElFTkSuQmCC') no-repeat;
+            background-size:100% 100%;
+        }
+        .font_underline{
+            border-bottom:1px solid #F13434;
+        }
+    </style>
+    <title>统计报告</title>
+</head>
+<body>
+<div class="report">
+    <div class="header">
+        <div class="logo">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAAAyCAMAAADhhAc5AAABa1BMVEX///9+fn5xcXFlZWWysrIyMjJKSkqxsbFMTEw+Pj5/f39lZWVLS0s/Pz+wsLDk5ORmZmbx8fFXV1cxMTGGv6SkpKRYWFjn8u0/mW7KyspWpoBXpYDG9t/X19dZWVlycnL+///Z2dnZ+eq32cnm8uy12ciXl5eKioqfzLeezLazs7OMjIzz+Pa9vb2mpqZq5qqh8Mr2/frr/PRzc3OE67rP5trD39J9fX3m8u3Z+OmP7L+08tXz+fZKoHfB39FKn3c+mW5uspK22ciq0r96uJtwcHCr8dDa+OmZmZljrIna6+N7uZvb6+RLn3fP5dtjq4mTxa6r0sDb7ORp5qqYmJjm5uZ+fn6lpaXy8vJ86bXs/PTl5eW08tTMzMzY2Ni/v7+r8c+Li4uh78rj+u9kZGS99Np76bX1/vrLy8u+vr6ysrJxcXFz6K+99Nn////Q9+W089WF67rG9d/Q9+SO7L/+/v5y6K/H9d+X7sRfalPaAAAABXRSTlP+/v7+/jy2xOsAAAl0SURBVHhe7JTHDsIwEAXzj+ue3ui9fz4SIovAAa8P3HZOTg4ja6TnZBMPk/wpG2dr91m0lrMdVgD2GGflbBU8aBzdydncCQbIS+VsrYUX9koycrY1IOSlcrYePLJp0Mgj3V0AoS+V3zbXgMctvFSDJ5Eb/EYKrfTzuKxLM+44q04XX/z5fOynGqxalOmPy0kpP+4jxAItXT1706Yx2ZDtBDyqULg7aeb63DZuRfG+QBISaT2OrdTp2m7S1m6STfrYbrfvuu9+Lwxyg7VSdrhZiOqy6bRM//0KuCJIUJTlTM6MLREYkNBP9+DiQus4pacpACoM4h42DmiiCsSZxypqpjkJgHwQWsqRDLA+AkYEnIMR8EGdAawKg1HbooHmql7Te6cTiKp6JBvZ+66Arw9h++KzjhU/f/1uTiVYhC0E1tkcEH4cpkBMVMGVbc621ICG2wmAZDBoTkE37GllsRE/Xhqlg8MnAJsFjo6PbQmAdWL5OYBxpkEC01qIpQa+NoDt5b+pLtjv1Dd3YgsBSRcBoM2seONEgWGVbXeybIINWAw5uC7gh5sfM3WARpHag83ePu2NpLH+t5XlAOarFtuRQQd8dRfbz//Zrwte+k59+3gvMQeL+FFUFTY6ssPYqH9McYfYC4nlrZMAWOmuSg+b/4h8H7bqFGO9i00Ace7jFgBysNLgvQvbl0O7jQ864H5yICfcAmPHz4naVlLkhRBiDuSiAKQQ0vzpdoWKMrIoU54bBfaImd5XZSmAoiwNFYRGa2fy26KQHQGQUsZSFibeHgkhgbkQ26fqWdDnJjRYKWR6B7Yv/uGtYQNO/eGhrVthnPmIzOrkUKbcLGcSuDEktHk772bMVNGyjdzCgziIjXxLYpNgO2YWuLFHGBT134IUWbNCUDKKOlPSlcEmMd6P7eWnvcV/x6mf09WBYFOISxUAfDwec2C8kdxiAYouNsWBXpKniWfECmvqDeVGARDLrcYUNXLaxYa5hVdSdqneCVsIYH2zkeYuzO3XfxDbv2hZGyqoyKmvHx+i9igwGCRAbiCr9oOxg024/FHdWGXVGXc2EQDist0OWK+TcmDhOnQYzoEiFEB8ZLiJjtPUUnU0CcC0vViaZ2Rar4G11jk80WPPINVhbD96s1tPvf2sdeovDxelHKRYYhibBi872MbgqpvGWHlC6bTjzXGTN2dwW7LamdBdG6RpsqQxYLrqyQ1ky53MvJxwG6okvrX6jPx6AButYe9XUK1Botf1JtVxwCQ8Wy5IIUSQ+ylhLkQuHTak5iUvSxdgZFj3CfOGPpjyE6TtM205OXBY9QLsVbdhRnsVATlbXJD/R5Ugi4fcWH4Ym6/HA3XBf+9/9JFeyDwApArg64aqhj2ynyeOOVh5Ci6AZOuvahKwsrvVTVSzM552aYg2wlKKeKna6ql0ErM1WOmXFxTRqVceauGWWXEHto9/93tvt/EeZ0YhEKtKxeLdsBEMVtZjpYGIJm3cmirPUOMm2HTPoxSXtwWAOCBwuzmBKQmInkfBm7bb3BZuIhaqSU/RHSb9w/X19cOPG6f+ecCpX96XmgooN2YhUGitA0BvZE2q9mjZwUZQphQ2SJb9yoqVROmjnZAJgLWBgGmmJCXWNOtjuzkBRn13ywJMhYU2/k4tSheRSu3F9uHxtdXxg/df4jKqW24eVeFgSpA7Ijv0sWWpDQNR+cqtTQXAlB9shf3wRrG16lkAbINWhSt9ugByrXWYrbop2O4bAXkKKYDcfC1jSj1t+bYP24OH142efPieTr2dA1zOOeI92AL0JYewcW5zqPKhUXKz9he9YMsBmeYwvVsFrZG7ATTxSloFCBN+qWGVZDU3wI6AC2cewrbewfabX1+3evi9b3tHH77+/uND2Iq2KgiBuChMQ7HRTYvtfNpqAYwGsBmxqa52teQwWvT2xxFVlukcHcln1S62mndpzsGem5EEVpsZaIfYtkbKYCsgfWxPrn09/K5z6g8GnEpU9yoHGGPJ+ajsFVcdbDd+/hh1RxO2FtqsHjhYAyLVwzYibLUEwKwoIgewSSDvNNNImkpepUA6AaLO0jc32BbIPWzH1zs6duB+MZAb/nIntmWerpZZQ4RHUQQg2qiD7SRsJT1swmCbGGzndI96LG99avUVAPDSw6mZarHl2kruwValtL3J7S1UohpsM9N+xpLLS9vg7C8NNo5Ug7062vxZbL/6/jd3uP32SePUDz4dWOLIqYd037XNx4byeUKZ1DnKO//VjQvlpAtOVw02R0f0saGs6pkW2YzbtwWF1NKOJLIsUdmLzNQRqkP7VRaGz8H05kXZY0pKCQ+OfXD+Evfm7bv/gFXXM32y2ost6oh72C6BGKyLDWAdaJNPrH3DeADcYWzyag6wm3oNRGbxT3rnbeFT/3idPBqRsaMq37J0VcJPv7Xr1D/6S9x9DyprtQyFtDWdwVbXdQDURoNrW33kpYQ/ASBsYwdj4Xp1YbufVdXEcoO8resdbChrq8sGW7ZchVdr7jZuhhPyM2Daw0bygk1SnwBkgUh1sFl9ZwDc8c/2HCe9fnk4kxI2HgSGYLARb7GtdKurLrYTAEheGASJPbZYzZvuWl/xbnoVCYxiWao+Nh5YuZ3/KRoxdv6spLxl9KI7Umx1+QntYVIKNovQnqccmX8+tgNOdfXW4YNKQfNLzvNlCE/3WNtSg0WZ2To1dXdOF9FTV4xIBqOoj82pwTYjYtFHqc4qaoltU3dk3Z/XlAIPF9WsoN9lToBosp4XnLA5cNcD4NyREjn14EGlZsk0D5cukzolLTbWkbfdnSXJC/IGc9T+uu3iBunTbnpQMgFYw1EDkrAlkZWLtjo+HxliTmRyNqruwMasgwVt5bZ3yhGp3HZ+g7Dd4dR2ibvX7y+ZdhchY3KXK2NMq1YpYxcd6A2WVT4dR+fTUepuJ5JnuupJhePIPQ3swk8JZhXcJyWjaQNSW4Jp6CmlsE4XJptwuuVsrKpVHMcL8f92zV0FgRgKonb5ASFBLQQVIliKWNr6fjW7BmJpKvX/nxaugsvsvQQsZ+oJC4fsKXJvbbzsAbjxR3GPEsxfhISUAriOKdVK8f6PBGOu73fe6qPRmJRxUkgRxam8rrhng9a4A2KXQHErfJrYdMVp4caRd0BxoEdsquLWEx0A99s2v3+q86hEbLLitjtQIDYY+1Xc3uIGsUmKO2RojdiqJyV3BAViUzI4wQKx5YfYmsKI2F7NMziMNjjbwQAAAABJRU5ErkJggg==">
+        </div>
+        <div class="loadcli">
+            <!--      <div class="header-text-le" th:text="|NO.${reportNum}|">NO.09</div>-->
+            <!-- 跳转链接填写到a标签中即可 -->
+            <div class="skip">
+                <!-- .skip-this 样式为选中样式，若此标签需要复制详细报告，删除style即可 -->
+                <a class="skip-navi skip-this" href="沿空留巷采煤工艺防灭火技术研究_统计报告.html">统计报告</a>
+                <!-- 跳转链接填写到a标签中即可-->
+                <a class="skip-navi" style="margin-left: 20px;" href="沿空留巷采煤工艺防灭火技术研究_比对报告.html">比对报告</a>
+            </div>
+        </div>
+        <!-- 下载方法绑定到div上 -->
+        <div class="downloadCon">
+            <a class="downloadBtn" href="http://101.37.146.211:9002/format/api/dldReport?reportNum=77724c559d9t8861" target="_blank">
+                <span class="db_icon"></span>
+                <span class="db_name">下载</span>
+            </a>
+        </div>
+    </div>
+    <div class="report">
+        <div class="report-content">
+
+            <div class="report-content-No">NO.77724c559d9t8861</div>
+            <!-- 该div为一个模块 -->
+            <div class="txt_top">
+                <div class="report-blok">
+                    <p class="blokone-title">沿空留巷采煤工艺防灭火技术研究</p>
+                    <div class="blokone-txt-jian">
+                        <div class="blokone-txt-info">
+                            <div>作者：赵梁梁</div>
+                            <div>文档页数：43</div>
+                        </div>
+                        <div class="linexian"></div>
+                        <div class="blokone-txt-info">
+                            <div>指导老师：未知</div>
+                            <div>检测标准：华北理工大学大学生模板</div>
+                        </div>
+                        <div class="linexian"></div>
+                        <div class="blokone-txt-info">
+                            <div>文档字符数：27525</div>
+                            <div>检测日期：2023-05-18 17:31:14</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 横线 -->
+                <div class="hen-line"></div>
+                <!-- 检测结果 -->
+                <div class="blocktwo">
+                    <div class="blocktwo_left">
+                        <div class="blocktwo_left_title">
+                            检测结果
+                        </div>
+                    </div>
+                    <div class="blocktwo_right">
+
+                        <div class="blocktop_txt">
+                            <div class="blocktwo_txttop_xn">
+                                <div class="blocktwo_question">
+                                    问题总数：<span class="qingdiao-color" style="font-size: 16px;">258</span>
+                                </div>
+                                <div class="fenge-line"></div>
+                                <div class="blocktwo_question">
+                                    差错率：<span class="qingdiao-color">93.73</span>/10000
+                                </div>
+                            </div>
+                            <div class="blocktwo_txttop_ms">
+                                差错率计算方法：问题总数*10000/总字符数（每万字差错率）
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 横线 -->
+                <div class="hen-line"></div>
+                <!-- 文档信息 -->
+                <div class="blocktwo">
+                    <div class="blocktwo_left" style="flex-grow: 0.23;">
+                        <div class="blocktwo_left_title">
+                            文档信息
+                        </div>
+                    </div>
+                    <div class="blocktwo_right">
+                        <div class="there_model_right">
+                            <div class="moedie_right">
+                                <div class="">
+                                    公式数：<span>8</span>
+                                </div>
+                                <div class="">
+                                    空格数：<span>3670</span>
+                                </div>
+                                <div class="">
+                                    尾注数：<span>0</span>
+                                </div>
+                            </div>
+                            <div class="line3"></div>
+                            <div class="moedie_right">
+                                <div class="">
+                                    表格数：<span>30</span>
+                                </div>
+                                <div class="">
+                                    图片数：<span>63</span>
+                                </div>
+                                <div class="">
+                                    脚注数：<span>0</span>
+                                </div>
+                            </div>
+                            <div class="line3"></div>
+                            <div class="moedie_right">
+                                <div class="">
+                                    标点符号：<span>6421</span>
+                                </div>
+                                <div class="">
+                                    英文关键词个数：<span>4</span>
+                                </div>
+                                <div class="">
+                                    中文关键词个数：<span>4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 论文结构分析 -->
+                <div class="structure">
+                    <div class="border_left_weil border_weil"></div>
+                    <div class="border_right_weil border_weil"></div>
+                    <div class="border_bottomleft_weil border_weil"></div>
+                    <div class="border_bottomright_weil border_weil"></div>
+                    <div class="blocktwo_left">
+                        <div class="blocktwo_left_title1">
+                            论文结构分析
+                        </div>
+                    </div>
+                    <div class="cls_jiegou">
+                        <div class="jiegou-block duibi-rightline">
+                            <div class="blocktwo_title title_left_bg">
+                                标准结构：
+                            </div>
+                            <div class="">
+                                <!-- 这个列表序号是动态添加 -->
+                                <ul id="target">
+                                    <li class="biaozun_txt_li">
+                                        <div>封面</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>诚信声明</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>版权声明</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>中文摘要</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>中文关键词</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>英文摘要</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>英文关键词</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>目录</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>正文</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>参考文献</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>致谢</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div>附录</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="duibi-fxe">
+                            <div class="duibi-fnge">
+                                对比
+                            </div>
+                        </div>
+                        <div class="jiegou-block duibi-leftline">
+                            <div class="blocktwo_title title_right_bg">
+                                当前论文结构：
+                            </div>
+                            <div class="">
+                                <!-- 这个列表序号是动态添加 -->
+                                <ul>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">封面</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">诚信声明</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">版权声明</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">中文摘要</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">中文关键词</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">英文摘要</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">英文关键词</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">目录</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">正文</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">参考文献</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">致谢</div>
+                                    </li>
+                                    <li class="biaozun_txt_li">
+                                        <div class="txt_fontwght">附录</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 问题信息统计 -->
+                <div class="">
+                    <div class="blocktwo_left">
+                        <!--            <div class="blocktwo_left_title1">-->
+                        <!--              论文结构分析-->
+                        <!--            </div>-->
+                    </div>
+                    <!-- 结构分析 -->
+                    <div class="table_block">
+                        <div class="table_title">
+                            结构问题汇总
+                        </div>
+                        <div>
+                            <table class="border_distance">
+                                <thead class="thead">
+                                <tr>
+                                    <th>文档结构</th>
+                                    <th>内容</th>
+                                    <th>问题段落数</th>
+                                    <th>问题总数</th>
+                                    <!--<th>问题字数（字）</th>-->
+                                </tr>
+                                </thead>
+                                <tbody align="center" class="tbody">
+                                <tr>
+                                    <td>封面</td>
+                                    <td>有</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>诚信声明</td>
+                                    <td>有</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>版权声明</td>
+                                    <td>有</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>中文摘要</td>
+                                    <td>有</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>中文关键词</td>
+                                    <td>有</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>英文摘要</td>
+                                    <td>有</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>英文关键词</td>
+                                    <td>有</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>目录</td>
+                                    <td>有</td>
+                                    <td>1</td>
+                                    <td>6</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>正文</td>
+                                    <td>有</td>
+                                    <td>87</td>
+                                    <td>218</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>参考文献</td>
+                                    <td>有</td>
+                                    <td>30</td>
+                                    <td>31</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>致谢</td>
+                                    <td>有</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                <tr>
+                                    <td>附录</td>
+                                    <td>有</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <!--<td th:text="${es.errorWordCount}">3</td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- 字数分析 -->
+                    <div class="table_block">
+                        <div class="table_title">
+                            字数分析
+                        </div>
+                        <div>
+                            <table class="border_distance">
+                                <thead class="thead">
+                                <tr>
+                                    <th>题目</th>
+                                    <th>分析结果</th>
+                                    <th>实际</th>
+                                    <th>标准</th>
+                                </tr>
+                                </thead>
+                                <tbody align="center" class="tbody">
+                                <tr>
+                                    <td>封面</td>
+                                    <td>未设限</td>
+                                    <td>66字</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>诚信声明</td>
+                                    <td>未设限</td>
+                                    <td>157字</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>版权声明</td>
+                                    <td>未设限</td>
+                                    <td>157字</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>中文摘要</td>
+                                    <td>达标</td>
+                                    <td>456字</td>
+                                    <td>300-500字</td>
+                                </tr>
+                                <tr>
+                                    <td>中文关键词</td>
+                                    <td>达标</td>
+                                    <td>4个</td>
+                                    <td>3-5个</td>
+                                </tr>
+                                <tr>
+                                    <td>英文摘要</td>
+                                    <td>未设限</td>
+                                    <td>304字</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>英文关键词</td>
+                                    <td>达标</td>
+                                    <td>4个</td>
+                                    <td>3-5个</td>
+                                </tr>
+                                <tr>
+                                    <td>目录</td>
+                                    <td>未设限</td>
+                                    <td>397字</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>正文</td>
+                                    <td>未设限</td>
+                                    <td>16687字</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>参考文献</td>
+                                    <td>未设限</td>
+                                    <td>34个</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>致谢</td>
+                                    <td>未设限</td>
+                                    <td>335字</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>附录</td>
+                                    <td>未设限</td>
+                                    <td>1763字</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #28A781;">整篇文档</td>
+                                    <td style="color: #28A781;">未设限</td>
+                                    <td style="color: #28A781;">27525字</td>
+                                    <td style="color: #28A781;">-</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- 页面设置分析 -->
+                    <div class="table_block">
+                        <div class="table_title">
+                            页面设置分析
+                        </div>
+                        <div>
+                            <table class="border_distance yemianfx">
+                                <thead class="thead">
+                                <tr align="left">
+                                    <th>页面设置类型</th>
+                                    <th>问题总数</th>
+                                    <th>问题描述</th>
+                                </tr>
+                                </thead>
+                                
+                                <tbody class="tbody">
+                                <tr>
+                                    <td>页边距_1</td>
+                                    <td>0</td>
+                                    <td>
+                                        
+                                    </td>
+                                
+                                <tr>
+                                    <td>页边距_2</td>
+                                    <td>0</td>
+                                    <td>
+                                        
+                                    </td>
+                                
+                                <tr>
+                                    <td>页边距_3</td>
+                                    <td>0</td>
+                                    <td>
+                                        
+                                    </td>
+                                
+                                <tr>
+                                    <td>页边距_4</td>
+                                    <td>0</td>
+                                    <td>
+                                        
+                                    </td>
+                                
+                                <tr>
+                                    <td>页边距_5</td>
+                                    <td>0</td>
+                                    <td>
+                                        
+                                    </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 问题片段 -->
+                <div class="question_pianduan">
+                    <div class="blocktwo_left">
+                        <div class="blocktwo_left_title1">
+                            问题片段
+                        </div>
+                    </div>
+                    <!-- 结构分析 -->
+                    <div class="table_block" style="margin-top: 40px;">
+                        <div>
+                            <div style="margin-top: 20px;"></div>
+                            <div class="summarizing">
+                                <span class="qianyan">中文摘要</span> (错误总问题数<span>2</span></span>)
+                            </div>
+                            <table class="border_distance yemianfx">
+                                <colgroup>
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col>
+                                </colgroup>
+                                <thead class="thead">
+                                <tr>
+                                    <td>问题段序号</td>
+                                    <td>原文片段</td>
+<!--                                    <td>类型</td>-->
+                                    <td>问题描述</td>
+                                </tr>
+                                </thead>
+                                <tbody class="tbody">
+
+                                <tr>
+                                    <td>1</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">摘要</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>标题错误</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">本文主要研究了沿空留巷采煤工艺防灭火技术，通过数值模拟、理论分析等方法，探讨了沿空留巷工作面自然发火......种技术手段和措施的效果和优劣。本课题旨在为沿空留巷技术在易燃煤层中的安全推广提供理论依据和技术支持。</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>标点符号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <div style="margin-top: 20px;"></div>
+                            <div class="summarizing">
+                                <span class="qianyan">英文摘要</span> (错误总问题数<span>1</span></span>)
+                            </div>
+                            <table class="border_distance yemianfx">
+                                <colgroup>
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col>
+                                </colgroup>
+                                <thead class="thead">
+                                <tr>
+                                    <td>问题段序号</td>
+                                    <td>原文片段</td>
+<!--                                    <td>类型</td>-->
+                                    <td>问题描述</td>
+                                </tr>
+                                </thead>
+                                <tbody class="tbody">
+
+                                <tr>
+                                    <td>3</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">This paper mainly studies the fire prevention and ......ntry retaining technology in flammable coal seams.</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <div style="margin-top: 20px;"></div>
+                            <div class="summarizing">
+                                <span class="qianyan">目录</span> (错误总问题数<span>6</span></span>)
+                            </div>
+                            <table class="border_distance yemianfx">
+                                <colgroup>
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col>
+                                </colgroup>
+                                <thead class="thead">
+                                <tr>
+                                    <td>问题段序号</td>
+                                    <td>原文片段</td>
+<!--                                    <td>类型</td>-->
+                                    <td>问题描述</td>
+                                </tr>
+                                </thead>
+                                <tbody class="tbody">
+
+                                <tr>
+                                    <td>4</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">目录</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>标题错误</span>
+                                        </div>
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题，字号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <div style="margin-top: 20px;"></div>
+                            <div class="summarizing">
+                                <span class="qianyan">正文</span> (错误总问题数<span>218</span></span>)
+                            </div>
+                            <table class="border_distance yemianfx">
+                                <colgroup>
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col>
+                                </colgroup>
+                                <thead class="thead">
+                                <tr>
+                                    <td>问题段序号</td>
+                                    <td>原文片段</td>
+<!--                                    <td>类型</td>-->
+                                    <td>问题描述</td>
+                                </tr>
+                                </thead>
+                                <tbody class="tbody">
+
+                                <tr>
+                                    <td>5</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">沿空留巷是指在采煤工作面后方沿采空区边缘维护原回采巷道，利用特定的方法对前一个区段的通道进行再次加固......以最大限度回收资源，避免煤体损失。沿空留巷一般适应于开采缓倾斜和倾斜、厚度在2m以下的薄及中厚煤层。</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>标点符号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>6</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(1)沿空留巷可以完全取消区段煤柱，提高采出率。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>7</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(2)沿空留巷可以降低掘进率，缩短采区的准备时间。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>8</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(3)沿空留巷可以实现Y型通风，改善工作面的通风条件。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>9</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(4)沿空留巷可以减少成本，节约资源。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>10</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(5)沿空留巷可以最大限度地回收资源，避免煤体损失</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>11</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(6)沿空留巷可以防止回采过程中因推进缓慢、采空区漏风等因素导致采空区遗煤自燃，保障安全生产</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>12</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(1)沿空留巷工作面由于推进速度慢、停顿时间长、通风条件复杂等因素导致漏风量增大、氧浓度升高、温度升......下容易引起遗留在采空区内的可自然发火性强的易自然发火层位遗存粉碎或块体遗存及支护材料等物质自然发火。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>13</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(2)沿空留巷工作面由于地应力集中及其变化引起岩层移动或断裂而产生新鲜裂隙，在一定条件下容易引起裂隙内部或周围物质自然发火。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>14</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(3)沿空留巷工作面由于存在多个漏风通道而形成复杂的漏风网络，在一定条件下容易引起漏风网络内部或周围物质自然发火。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>15</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(4)沿空留巷工作面由于存在多个注氮点而形成复杂的注氮系统，在一定条件下容易引起注氮系统内部或周围物质自然发火。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>16</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(5)沿空留巷需要采用一些有效的支护技术来保证靠近采空区边缘的巷道稳定，防止塌方、冒顶等事故。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>17</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(6)沿空留巷需要考虑巷道受到工作面开采支承压力重新分布的影响，防止出现过大的应力集中和变形。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>18</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(7)沿空留巷需要建立合理的通风系统，防止采空区漏风和瓦斯积聚，保障通风安全。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>19</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(8)沿空留巷需要根据不同地质条件和开采方式选择合适的小煤柱尺寸和沿空留巷类型，以达到最优化效果。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>20</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(1)优化支护方式，提高柔模墙体的密封性和稳定性，减少漏风量，如采用高强度、高韧性、高耐热的柔模材料，增加柔模厚度和接顶长度等。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>21</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(2)优化充填方式，提高充填材料的阻化效果和填充效率，如采用含有阻化剂的水泥砂浆、水泥凝胶、河砂等充填材料，增加充填密度和压力等。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>22</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(3)优化配风方式，提高工作面的通风质量和安全性，如采用局部负压通风、分级分区通风、闭锁隔离通风等配风方案，控制漏风量和氧浓度等。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>23</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(4)优化监测方式，提高工作面的监测精度和实时性，如采用束管监测、红外监测、微波监测等先进的监测方法，及时发现自然发火的征兆和位置等。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>24</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(5)沿空留巷技术需要不断完善和创新，以适应不同煤层条件和开采方式的要求。特别是在有自燃倾向性的煤层......善，以提高沿空留巷的安全性和持久性。主要包括优化支护形式、材料、参数等，以及发展新型支护材料和设备。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>标点符号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>25</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(6)沿空留巷技术需要注意辅助技术对沿空留巷顶板压力控制的影响，如充填技术、注浆技术、爆破释压技术等。通过辅助技术，可以有效地降低沿空留巷围岩应力水平，减少变形损坏。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>26</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(7)沿空留巷技术需要加强理论研究和实践验证，以提高沿空留巷设计水平和施工质量。主要包括建立合理的数学模型、数值模拟方法、监测预警系统等，以及开展大量的现场试验和观测。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>27</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">3.1计算流体力学</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>28</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">3.2流体的运动状态</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>29</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">3.3建立模型</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>30</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">3.3.1几何模型</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>31</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(1)准备模型和几何体： 首先，在ANSYS DesignModeler软件中创建要模拟的几何模型。分别创建采空区长度为100m，150m，200m的几何模型。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>32</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表3.1部件设计</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>表序问题，表题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>33</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>34</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>35</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(2)网格划分： 使用ANSYS Meshing工具，对模型进行网格划分。在燃烧区域和边界层附近使用......不考虑沿空留巷的模型中创建一个进风口和一个出风口，在考虑沿空留巷的模型中创建两个进风口和一个出风口。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>36</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表3.2网格划分</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>表序问题，表题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>37</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>38</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>39</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>40</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>段前问题，段后问题，对齐方式问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>41</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">3.3.2 物理模型</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>42</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">3.4.1 自燃三带分布</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>43</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>段前问题，段后问题，对齐方式问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>44</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>45</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，行距问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>46</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表3.3模拟结果</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>表序问题，表题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>47</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>48</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>49</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">观察图像可得：在X轴方向，采空区内的氧气含量从外到内逐渐降低，散热带在大约0~50m范围内，氧气质量......氧气浓度低于8%，。随着Y轴,Z轴距离增加，氧气的扩散范围逐渐减少，整体上自燃三带从外到内顺序分布。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>标点符号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>50</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">随采空区长度不断扩大，在采空区内，散热带的面积占比不断减小，基本呈线性变化，采空区长度每增加50m,......当采空区长度从150m增加到200m，氧化带面积从3216.98m到3180.25m，变化并不明显。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>标点符号问题，字号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>51</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">3.4.2 沿空留巷自燃三带分布</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>52</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，行距问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>53</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>54</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>55</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表3.4模拟结果</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>表序问题，表题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>56</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>57</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">观察图像可得：在加入沿空留巷后，自燃三带的分布有着明显变化，但整体上依旧是从外到内依次分布，边界明显......，为散热带。氧化带大致呈W形分布，大致扩散20~30m，剩余部分为窒息带，大致呈上宽下窄的梯形分布。</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>标点符号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>58</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">3.4.3 风速对自燃三带分布的影响</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>59</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">不考虑沿空留巷的影响，分别在进风巷设置风速为1.2m/s，1.5m/s，2m/s,氧气质量分数均为23%。观察残差与收敛情况，得到计算结果，如下图：</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>标点符号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>60</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>61</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>62</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>63</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表3.5模拟结果</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>表序问题，表题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>64</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">图3.34不同风速下自燃三带面积</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>图序问题，图题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>65</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">在无沿空留巷的影响下，随着风速的不断增加：散热带面积不断增大，当风速由1.2m/s变化到1.5m/s......氧化带面积不断减小，呈线性变化。窒息带面积呈先增后减的趋势，在风速为1.5m/s时,散热带面积最大。</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>标点符号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>66</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，行距问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>67</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，行距问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>68</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>69</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表3.6模拟结果</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>表序问题，表题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>70</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>71</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">图3.41不同风速下三带面积（沿空留巷）</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>图序问题，图题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>72</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">3.4.4 孔隙率对自燃三带分布的影响</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>行距问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>73</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">不考虑沿空留巷的影响，设置进风巷风速为固定1.2m/s，氧气浓度为固定23%，分别设置采空区的孔隙率为0，0.1,0.2，观察残差与收敛情况，得到计算结果，如下图：</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>标点符号问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>74</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，行距问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>75</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>76</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>77</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表3.7模拟结果</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>表序问题，表题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>78</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">图3.48不同孔隙率下三带面积</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>图序问题，图题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>79</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题，表格要求</span>
+                                        </div>
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>80</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表3.8模拟结果</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>表序问题，表题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>81</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">表格</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>对齐方式问题，段前问题，段后问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>82</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">图3.55不同孔隙率下三带面积（沿空留巷）</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>图序问题，图题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>83</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(1)可以降低采空区内的氧浓度，延缓或阻止遗煤的氧化反应，降低自然发火的风险。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>84</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(2)可以减少采空区内的瓦斯积聚，防止瓦斯爆炸和突出事故，保障工作面的安全。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>85</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(3)可以改善工作面的通风质量，提高工作面的温度和湿度，改善工作环境。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>86</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">(4)可以节约通风能耗，降低通风成本，提高经济效益。</div>
+                                    </td>
+                                    <td>
+                                        <div >
+                                            <span >段落问题</span>：
+                                            <span>首行缩进问题</span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>87</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">图4.1漏风控制技术</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>图序问题，图题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>88</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">图4.2注氮降温技术</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>图序问题，图题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>89</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">图4.3注浆密闭技术</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>图序问题，图题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>90</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">图4.4阻化剂喷洒技术</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>图序问题，图题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>91</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">图4.5监测预警技术</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>图序问题，图题问题</span>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <div style="margin-top: 20px;"></div>
+                            <div class="summarizing">
+                                <span class="qianyan">参考文献</span> (错误总问题数<span>31</span></span>)
+                            </div>
+                            <table class="border_distance yemianfx">
+                                <colgroup>
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col>
+                                </colgroup>
+                                <thead class="thead">
+                                <tr>
+                                    <td>问题段序号</td>
+                                    <td>原文片段</td>
+<!--                                    <td>类型</td>-->
+                                    <td>问题描述</td>
+                                </tr>
+                                </thead>
+                                <tbody class="tbody">
+
+                                <tr>
+                                    <td>92</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[1]康志鹏. 古城煤矿综放工作面厚煤层软底沿空留巷技术研究 [D]; 中国矿业大学, 2021.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>93</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[2]邢继亮. 屯兰矿大断面巷道沿空留巷技术研究 [D]; 中国矿业大学（北京）, 2013.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>94</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[3]费旭敏. 我国沿空留巷支护技术现状及存在的问题探讨 [J]. 中国科技信息, 2008, (07): 48-9+51.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>95</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[4]万岩. 低龄期柔模承载混凝土强度试验与增长规律研究 [D]; 西安科技大学, 2012.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>96</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[5]张智强. 双突矿井中柔模混凝土沿空留巷应用研究 [D]; 西安科技大学, 2012.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>97</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[6]王永福. 揉模填充工艺在巷旁支护中的应用 [J]. 陕西煤炭, 2016, 35(03): 70-3.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>98</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[7]花锦波. 近距重复采动无墙体沿空留巷围岩稳定与控制技术 [D]; 中国矿业大学, 2015.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>99</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[8]杨帆. 海石湾煤矿6113工作面深部沿空留巷围岩控制技术研究 [D]; 中国矿业大学, 2015.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>100</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[9]樊彦东. 高水巷旁充填沿空留巷技术应用研究 [D]; 河北工程大学, 2015.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>101</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[10]马强. 高水充填沿空留巷支护优化设计 [D]; 河北工程大学, 2015.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>102</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[11]吴存良. 花山煤矿采煤工作面沿空留巷支护技术研究 [D]; 重庆大学, 2008.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>103</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[12]阚甲广. 典型顶板条件沿空留巷围岩结构分析及控制技术研究 [D]; 中国矿业大学, 2009.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>104</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[13]亓佳利. 薄煤层坚硬石灰岩顶板条件下沿空留巷技术研究及应用 [D]; 山东科技大学, 2011.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>105</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[14]孙乐乐. 大倾角中厚煤层软弱顶底板沿空留巷 [D]; 重庆大学, 2012.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>106</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[15]王勇. “三软”倾斜煤层沿空留巷巷旁支护技术研究 [D]; 重庆大学, 2012.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>107</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[16]张飞. 混凝土预制块砌碹墙巷旁支护沿空留巷 [D]; 重庆大学, 2014.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>108</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[17]张志义. 900m埋深沿空留巷复用机理与技术研究 [D]; 中国矿业大学, 2014.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>109</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[18]刘洪洋. 采空区下沿空留巷顶板稳定性影响因素及控制对策 [D]; 中国矿业大学, 2014.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>110</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[19]郭正超. 坚硬顶板预制混凝土大砌块沿空留巷技术研究及应用 [D]; 西安科技大学, 2014.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>111</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[20]周占松. 重载机车故障预测与健康管理技术体系架构研究与应用 [J]. 控制与信息技术, 2022, (06): 115-22.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[21]王伟, 鹿文勇, 陈洋. 沿空留巷工作面综合防灭火技术 [J]. 煤矿安全, 2016, 47(04): 85-7.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>113</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[22]道客巴巴. 沿空留巷技术 [Z]. 2018</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <div >
+                                            <span >内容问题</span>：
+                                            <span>标点结尾问题</span>
+                                        </div>
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>114</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[23]张农. 深入实践、坚持创新、持续推动支护技术进步——2013年度煤矿支护专业委员会专家组工作报告 [J]. 煤矿支护, 2013, (4): 3.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>115</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[24]孙云庆. 9~#煤层切顶卸压沿空留巷技术研究应用 [J]. 同煤科技, 2021, (06): 36-9.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>116</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[26]孟晓强. 云驾岭煤矿12305工作面沿空留巷技术应用研究 [D]; 河北工程大学, 2016.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>117</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[27]魏淑艳, 杨大瀚. 中国地方政府安全生产的“监管空间”问题研究——基于31个危化品生产安全事故案例 [J]. 东北大学学报(社会科学版), 2017, 19(02): 173-9.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>118</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[28]王卫国, 潘竟虎, 李俊峰. 基于空间Logistic的山西省火灾风险评价与火险区划 [J]. 草业科学, 2016, 33(04): 635-44.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>119</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[29]张朋. 煤矿应急救援无线传感器节点关键技术研究 [D]; 中国矿业大学, 2015.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>120</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[30]康福钧. CO_2灭火技术的应用与评价 [J]. 华北科技学院学报, 2006, (01): 35-7.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>121</td>
+<!--                                    <td th:text="${p.type}">字体问题</td>-->
+                                    <td class="td_fixed_width">
+                                        <div class="more">[31]邓声炜. 综合防灭火技术在煤矿中的应用 [J]. 内燃机与配件, 2017, (13): 107-10.</div>
+                                    </td>
+                                    <td>
+                                        
+                                        
+                                        <div >
+                                            <span >字体问题</span>：
+                                            <span>字体问题</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="read_explain">
+                    <div class="sm_title">
+                        <p class="gt_icon">!</p>
+                        <p class="sm_txt">阅读说明</p>
+                    </div>
+                    <div class="sm_sm_txt">
+                        <div>
+                            检测依据：《GB7713学位论文编写格式》《GB7714参考文献著录规则》《GB15834标点符号用法》《GB15835出版物上数字用法》《GB3100国际单位制及其应用》《GB3101有关量单位符号的一般原则》《GB3102空间和时间的量和单位》。
+                        </div>
+                        <div>
+                            差错率计算方法：问题总数*10000/总字符数（每万字差错率），参考《图书质量管理规定》《报纸期刊质量管理规定》。
+                        </div>
+                        <div>
+                            报告编号系送检论文检测报告在本系统中的唯一编号。
+                        </div>
+                        <div>
+                            格式检测依据相关条例和学校规范进行，结果仅供参考。
+                        </div>
+                        <div>
+                            如果对检测报告有任何疑问，请联系客服。<br>
+                            客服热线：400-607-5550 | 客服QQ：4006075550 | 客服邮箱：vpcs@cqvip.com<br>
+                            唯一官方网站：http://vpcs.cqvip.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    // 动态添加序号
+    function setSN(e) {
+        var ul = document.getElementById(e);
+        var lis = ul.getElementsByTagName('li');
+        for (var i = 0, l = lis.length; i < l; i++) {
+            var tHTML = lis[i].innerHTML;
+            lis[i].innerHTML = '<div>' + (i + 1) + '</div>' + tHTML;
+        }
+    }
+
+    setSN('target');
+</script>
+<style>
+    /* 调整版图，实际项目删除  */
+    .report {
+        padding-bottom: 100px;
+        padding-top: 40px;
+    }
+</style>
